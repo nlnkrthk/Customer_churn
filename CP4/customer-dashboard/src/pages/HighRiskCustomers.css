@@ -1,0 +1,800 @@
+/* =========================================================
+   HIGH-RISK CUSTOMERS
+   CUSTOMER RETENTION INTELLIGENCE SYSTEM
+   ========================================================= */
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+.risk-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #050505;
+  font-family: Georgia, "Times New Roman", serif;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.risk-header {
+  height: 118px;
+  border-bottom: 5px solid #050505;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 22px 48px 14px 48px;
+}
+
+
+.risk-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.eyebrow,
+.section-label,
+.risk-header-right,
+.section-number,
+.count-label,
+.table-controls,
+.limit-info,
+.risk-footer {
+  font-family: "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+
+.risk-header h1 {
+  margin: 0;
+  font-size: 54px;
+  line-height: 0.85;
+  font-weight: 400;
+  letter-spacing: -4px;
+}
+
+
+.risk-header h1 em {
+  font-weight: 400;
+  font-style: italic;
+  margin-left: 12px;
+}
+
+
+.risk-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: right;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.risk-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.risk-intro {
+  min-height: 230px;
+  border-right: 3px solid #050505;
+  border-bottom: 1px solid #050505;
+
+  padding: 38px 46px;
+
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 24px;
+}
+
+
+.section-number {
+  font-size: 12px;
+  padding-top: 5px;
+}
+
+
+.section-label {
+  display: block;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+
+.risk-intro h2 {
+  font-size: 39px;
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+  margin: 0 0 18px 0;
+}
+
+
+.risk-intro h2 em {
+  display: block;
+  font-style: italic;
+}
+
+
+.risk-intro p {
+  max-width: 570px;
+  font-size: 16px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.risk-summary {
+  min-height: 230px;
+  border-bottom: 1px solid #050505;
+
+  padding: 38px 46px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.risk-count {
+  font-size: 88px;
+  line-height: 0.8;
+  letter-spacing: -5px;
+}
+
+
+.count-label {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   TABLE SECTION
+   ========================================================= */
+
+.risk-table-section {
+  grid-column: 1 / -1;
+  padding: 30px 46px 28px 46px;
+}
+
+
+.table-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  border-bottom: 1px solid #050505;
+
+  padding-bottom: 18px;
+}
+
+
+.table-heading h3 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -1px;
+}
+
+
+.table-heading h3 em {
+  font-style: italic;
+}
+
+
+.table-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 10px;
+}
+
+
+.sort-button {
+  border: 1px solid #050505;
+  background: #ffffff;
+  color: #050505;
+
+  padding: 9px 14px;
+
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+.sort-button:hover {
+  background: #050505;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.risk-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+.risk-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+
+.risk-table th {
+  text-align: left;
+
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: bold;
+
+  padding: 14px 10px;
+
+  border-bottom: 2px solid #050505;
+}
+
+
+.risk-table td {
+  padding: 15px 10px;
+
+  font-size: 15px;
+
+  border-bottom: 1px solid #cfcfcf;
+
+  vertical-align: middle;
+}
+
+
+.risk-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+
+.risk-table tbody tr:hover {
+  background: #f4f4f4;
+}
+
+
+.risk-table th:nth-child(1),
+.risk-table td:nth-child(1) {
+  width: 17%;
+}
+
+
+.risk-table th:nth-child(2),
+.risk-table td:nth-child(2) {
+  width: 13%;
+}
+
+
+.risk-table th:nth-child(3),
+.risk-table td:nth-child(3) {
+  width: 18%;
+}
+
+
+.risk-table th:nth-child(4),
+.risk-table td:nth-child(4) {
+  width: 20%;
+}
+
+
+.risk-table th:nth-child(5),
+.risk-table td:nth-child(5) {
+  width: 32%;
+}
+
+
+.sortable {
+  cursor: pointer;
+}
+
+
+.sortable:hover {
+  text-decoration: underline;
+}
+
+
+.customer-id {
+  font-family: "Courier New", monospace;
+  font-size: 13px !important;
+  font-weight: bold;
+}
+
+
+.unit {
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: 6px;
+}
+
+
+.charges {
+  font-family: "Courier New", monospace;
+  font-size: 14px !important;
+}
+
+
+.risk-reason {
+  display: inline-block;
+
+  border-left: 3px solid #050505;
+
+  padding-left: 10px;
+
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   LOAD MORE
+   ========================================================= */
+
+.load-more-container {
+  margin-top: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.load-more {
+  width: 300px;
+  height: 48px;
+
+  background: #050505;
+  color: #ffffff;
+
+  border: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 18px;
+
+  cursor: pointer;
+
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  transition: all 0.2s ease;
+}
+
+
+.load-more:hover {
+  background: #222222;
+}
+
+
+.load-more:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.arrow {
+  font-size: 24px;
+  font-family: Georgia, serif;
+  font-weight: normal;
+}
+
+
+.limit-info {
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.risk-error {
+  border: 1px solid #050505;
+
+  padding: 14px 18px;
+  margin-top: 18px;
+
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+  min-height: 230px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border-bottom: 1px solid #050505;
+}
+
+
+.empty-state h3 {
+  margin: 0;
+
+  font-size: 40px;
+  font-weight: 400;
+
+  line-height: 0.9;
+}
+
+
+.empty-state h3 em {
+  display: block;
+  font-style: italic;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.risk-loading {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+.risk-loading span {
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+
+.risk-loading h1 {
+  font-size: 70px;
+  line-height: 0.85;
+  font-weight: 400;
+  letter-spacing: -3px;
+}
+
+
+.risk-loading h1 br {
+  display: block;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.risk-footer {
+  height: 38px;
+
+  border-top: 1px solid #050505;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 28px;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .risk-header {
+    padding: 18px 25px;
+  }
+
+  .risk-header h1 {
+    font-size: 42px;
+  }
+
+  .risk-main {
+    grid-template-columns: 1fr;
+  }
+
+  .risk-intro {
+    border-right: none;
+  }
+
+  .risk-summary {
+    min-height: 170px;
+  }
+
+  .risk-table-section {
+    padding: 25px;
+  }
+
+  .table-heading {
+    align-items: flex-start;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .risk-table {
+    min-width: 800px;
+  }
+
+}
+
+
+@media (max-height: 800px) {
+
+  .risk-header {
+    height: 105px;
+    padding-top: 18px;
+  }
+
+  .risk-header h1 {
+    font-size: 45px;
+  }
+
+  .risk-intro,
+  .risk-summary {
+    min-height: 190px;
+    padding: 28px 40px;
+  }
+
+  .risk-intro h2 {
+    font-size: 32px;
+  }
+
+  .risk-count {
+    font-size: 70px;
+  }
+
+  .risk-table-section {
+    padding-top: 22px;
+  }
+
+  .risk-table td {
+    padding: 11px 10px;
+  }
+
+}
+
+/* =========================================================
+   CUSTOMER DISPLAY LIMIT
+   ========================================================= */
+
+.customer-limit {
+  min-height: 75px;
+
+  padding: 16px 0;
+
+  border-bottom: 1px solid #050505;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+.customer-limit-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+.customer-limit-label .section-label {
+  margin: 0;
+}
+
+
+.customer-limit-help {
+  font-family: "Courier New", monospace;
+
+  font-size: 9px;
+
+  color: #666666;
+
+  letter-spacing: 0.5px;
+}
+
+
+.customer-limit-control {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.customer-limit-control input {
+  width: 90px;
+
+  height: 38px;
+
+  padding: 0 10px;
+
+  background: #ffffff;
+
+  color: #050505;
+
+  border: 1px solid #050505;
+
+  border-radius: 0;
+
+  outline: none;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  text-align: center;
+}
+
+
+.customer-limit-control input:focus {
+  border: 2px solid #050505;
+}
+
+
+.customer-limit-control button {
+  height: 38px;
+
+  padding: 0 20px;
+
+  border: 1px solid #050505;
+
+  background: #050505;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 10px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  transition: all 0.2s ease;
+}
+
+
+.customer-limit-control button:hover:not(:disabled) {
+  background: #ffffff;
+
+  color: #050505;
+}
+
+
+.customer-limit-control button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   UPDATED RESULT INFORMATION
+   ========================================================= */
+
+.load-more-container {
+  margin-top: 14px;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+}
+
+
+.limit-info {
+  font-family: "Courier New", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  color: #555555;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .customer-limit {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .customer-limit-label {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+  }
+
+}

@@ -1,0 +1,783 @@
+/* =========================================================
+   CHURN SUMMARY
+   CUSTOMER RETENTION INTELLIGENCE SYSTEM
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+.summary-page {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+
+  background: #ffffff;
+  color: #000000;
+
+  font-family: "Source Serif 4", Georgia, serif;
+
+  overflow: hidden;
+}
+
+.summary-page *,
+.summary-page *::before,
+.summary-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.summary-header {
+  width: 100%;
+
+  height: 118px;
+
+  padding: 25px 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 5px solid #000000;
+}
+
+
+/* Eyebrow */
+
+.summary-eyebrow {
+  margin: 0 0 12px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+
+/* Main title */
+
+.summary-header h1 {
+  margin: 0;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 48px;
+
+  font-weight: 500;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.05em;
+}
+
+.summary-header h1 em {
+  font-weight: 400;
+}
+
+
+/* Right header */
+
+.summary-header-meta {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 14px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* =========================================================
+   MAIN WORKSPACE
+   ========================================================= */
+
+.summary-workspace {
+  width: 100%;
+
+  height: calc(100vh - 146px);
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  min-height: 0;
+}
+
+
+/* =========================================================
+   LEFT — METRICS
+   ========================================================= */
+
+.summary-metrics-section {
+  min-width: 0;
+  min-height: 0;
+
+  padding: 38px 45px;
+
+  border-right: 2px solid #000000;
+
+  overflow: hidden;
+}
+
+
+/* Section label */
+
+.summary-section-label {
+  display: flex;
+
+  gap: 15px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* Main section heading */
+
+.summary-metrics-section h2 {
+  margin: 25px 0 35px;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 56px;
+
+  font-weight: 500;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   METRICS
+   ========================================================= */
+
+.summary-metrics {
+  width: 100%;
+
+  border-top: 1px solid #000000;
+}
+
+
+/* Individual metric */
+
+.summary-metric {
+  min-height: 112px;
+
+  padding: 18px 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  border-bottom: 1px solid #000000;
+}
+
+
+/* Number */
+
+.metric-number {
+  width: 30px;
+
+  flex-shrink: 0;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* Content */
+
+.metric-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+/* Label */
+
+.metric-label {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+}
+
+
+/* Value */
+
+.metric-content strong {
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 58px;
+
+  font-weight: 500;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.summary-error {
+  padding: 15px;
+
+  border: 1px solid #000000;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 9px;
+}
+
+.summary-error span {
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.summary-error p {
+  margin: 8px 0 0;
+
+  font-family: "Source Serif 4", Georgia, serif;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   RIGHT — CONTRACT ANALYSIS
+   ========================================================= */
+
+.summary-contract-section {
+  min-width: 0;
+  min-height: 0;
+
+  padding: 38px 45px;
+
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: #000000 #ffffff;
+}
+
+
+/* Scrollbar */
+
+.summary-contract-section::-webkit-scrollbar {
+  width: 5px;
+}
+
+.summary-contract-section::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.summary-contract-section::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+
+/* =========================================================
+   CONTRACT HEADER
+   ========================================================= */
+
+.contract-header {
+  padding-bottom: 22px;
+
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #000000;
+}
+
+
+/* Heading */
+
+.contract-header h2 {
+  margin: 20px 0 0;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 48px;
+
+  font-weight: 500;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.05em;
+}
+
+
+/* Status */
+
+.analysis-status {
+  padding-top: 3px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 0.13em;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   CONTRACT TABLE
+   ========================================================= */
+
+.contract-analysis {
+  width: 100%;
+
+  margin-top: 28px;
+}
+
+
+/* Table heading */
+
+.contract-table-heading {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  padding-bottom: 10px;
+
+  border-bottom: 2px solid #000000;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+}
+
+.contract-table-heading span:last-child {
+  text-align: right;
+}
+
+
+/* =========================================================
+   CONTRACT ROW
+   ========================================================= */
+
+.contract-row {
+  min-height: 130px;
+
+  padding: 22px 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 30px;
+
+  border-bottom: 1px solid #000000;
+}
+
+
+/* Contract name */
+
+.contract-name {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 18px;
+}
+
+.contract-number {
+  margin-top: 4px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.1em;
+}
+
+.contract-name strong {
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 28px;
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   RATE
+   ========================================================= */
+
+.contract-rate {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  justify-content: center;
+}
+
+
+/* Percentage */
+
+.contract-rate-value {
+  margin-bottom: 13px;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 34px;
+
+  font-weight: 500;
+
+  line-height: 0.9;
+}
+
+
+/* Bar */
+
+.contract-bar {
+  width: 100%;
+
+  height: 7px;
+
+  background: #e5e5e5;
+}
+
+
+/* Bar fill */
+
+.contract-bar-fill {
+  height: 100%;
+
+  background: #000000;
+
+  transition: width 0.3s ease;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.summary-footer {
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 28px;
+
+  padding: 0 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ffffff;
+
+  border-top: 1px solid #000000;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 0.12em;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   LOADING PAGE
+   ========================================================= */
+
+.summary-loading-page {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.summary-loading {
+  text-align: center;
+}
+
+.summary-loading span {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.15em;
+}
+
+.summary-loading h1 {
+  margin: 25px 0;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 72px;
+
+  font-weight: 500;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.05em;
+}
+
+.summary-loading h1 em {
+  font-weight: 400;
+}
+
+.summary-loading p {
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   SHORT LAPTOP
+   ========================================================= */
+
+@media (min-width: 801px) and (max-height: 750px) {
+
+  .summary-header {
+    height: 90px;
+
+    padding: 18px 35px;
+
+    border-bottom-width: 4px;
+  }
+
+  .summary-eyebrow {
+    margin-bottom: 8px;
+
+    font-size: 8px;
+  }
+
+  .summary-header h1 {
+    font-size: 38px;
+  }
+
+  .summary-workspace {
+    height: calc(100vh - 118px);
+  }
+
+  .summary-metrics-section,
+  .summary-contract-section {
+    padding: 25px 35px;
+  }
+
+  .summary-metrics-section h2 {
+    margin: 18px 0 22px;
+
+    font-size: 44px;
+  }
+
+  .summary-metric {
+    min-height: 88px;
+
+    padding: 12px 0;
+  }
+
+  .metric-content strong {
+    font-size: 46px;
+  }
+
+  .contract-header h2 {
+    margin-top: 14px;
+
+    font-size: 40px;
+  }
+
+  .contract-row {
+    min-height: 105px;
+
+    padding: 15px 0;
+  }
+
+  .contract-name strong {
+    font-size: 23px;
+  }
+
+  .contract-rate-value {
+    font-size: 28px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .summary-page {
+    height: auto;
+
+    overflow: visible;
+  }
+
+  .summary-header {
+    height: auto;
+
+    padding: 25px 24px;
+
+    border-bottom-width: 4px;
+  }
+
+  .summary-header h1 {
+    font-size: 46px;
+  }
+
+  .summary-header-meta {
+    display: none;
+  }
+
+  .summary-workspace {
+    height: auto;
+
+    display: block;
+  }
+
+  .summary-metrics-section {
+    padding: 35px 24px 45px;
+
+    border-right: 0;
+
+    border-bottom: 4px solid #000000;
+  }
+
+  .summary-contract-section {
+    padding: 35px 24px 55px;
+
+    overflow: visible;
+  }
+
+  .summary-metrics-section h2 {
+    font-size: 48px;
+  }
+
+  .summary-metric {
+    min-height: 100px;
+  }
+
+  .metric-content strong {
+    font-size: 50px;
+  }
+
+  .contract-header h2 {
+    font-size: 42px;
+  }
+
+  .contract-row {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .contract-rate {
+    align-items: flex-start;
+  }
+
+  .contract-rate-value {
+    font-size: 30px;
+  }
+
+  .summary-footer {
+    position: static;
+
+    height: auto;
+
+    padding: 18px 24px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+  .summary-header {
+    padding: 22px 18px;
+  }
+
+  .summary-header h1 {
+    font-size: 40px;
+  }
+
+  .summary-metrics-section,
+  .summary-contract-section {
+    padding-left: 18px;
+
+    padding-right: 18px;
+  }
+
+  .summary-metrics-section h2 {
+    font-size: 42px;
+  }
+
+  .metric-content strong {
+    font-size: 44px;
+  }
+
+  .contract-header h2 {
+    font-size: 38px;
+  }
+
+}

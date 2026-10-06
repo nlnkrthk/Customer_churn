@@ -1,0 +1,565 @@
+/* =========================================================
+   CUSTOMER RETENTION INTELLIGENCE
+   LANDING PAGE
+   Minimalist Monochrome
+   ========================================================= */
+
+.landing-page {
+  position: relative;
+  min-height: 100vh;
+
+  background: #ffffff;
+  color: #000000;
+
+  font-family: "Source Serif 4", Georgia, serif;
+
+  overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------
+   SUBTLE PAPER / LINE TEXTURE
+   Kept extremely subtle so it does NOT overpower the page
+   --------------------------------------------------------- */
+
+.landing-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 0;
+
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.035) 2px,
+    rgba(0, 0, 0, 0.035) 3px
+  );
+
+  opacity: 0.35;
+}
+
+.landing-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.landing-header {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 28px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #000000;
+}
+
+.landing-brand {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  line-height: 1.15;
+  letter-spacing: 0.12em;
+}
+
+.landing-brand span {
+  display: block;
+}
+
+.landing-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.landing-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 110px 40px 90px;
+}
+
+.hero-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 45px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+}
+
+.hero-line {
+  width: 45px;
+  height: 2px;
+
+  background: #000000;
+}
+
+/* Main headline */
+
+.landing-hero h1 {
+  max-width: 1000px;
+  
+  margin: 0;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: clamp(72px, 10vw, 138px);
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.055em;
+}
+
+.landing-hero h1 em {
+  font-weight: 400;
+}
+
+/* Hero bottom information */
+
+.hero-bottom {
+  margin-top: 70px;
+
+  padding-top: 25px;
+
+  border-top: 2px solid #000000;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.hero-bottom p {
+  max-width: 500px;
+
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-mark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 4px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.hero-mark div {
+  width: 80px;
+  height: 1px;
+
+  background: #000000;
+}
+
+/* =========================================================
+   MAJOR DIVIDER
+   ========================================================= */
+
+.section-rule {
+  height: 5px;
+  width: 100%;
+
+  background: #000000;
+}
+
+/* =========================================================
+   PLATFORM SECTION
+   ========================================================= */
+
+.modules-section {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 100px 40px 120px;
+}
+
+.section-heading {
+  margin-bottom: 55px;
+}
+
+.section-heading > span {
+  display: block;
+
+  margin-bottom: 16px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: clamp(44px, 6vw, 72px);
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
+/* =========================================================
+   MODULE GRID
+   ========================================================= */
+
+.modules-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  border-top: 2px solid #000000;
+  border-left: 2px solid #000000;
+}
+
+.module-card {
+  position: relative;
+
+  min-height: 320px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+
+  color: #000000;
+  background: #ffffff;
+
+  border: 0;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  transition:
+    background-color 100ms linear,
+    color 100ms linear;
+}
+
+/* Hover inversion */
+
+.module-card:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Accessibility */
+
+.module-card:focus-visible {
+  outline: 3px solid #000000;
+  outline-offset: 3px;
+}
+
+/* Top row */
+
+.module-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.module-number {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 0.1em;
+}
+
+.module-arrow {
+  font-family: Georgia, serif;
+
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Module content */
+
+.module-content {
+  margin-top: auto;
+  margin-bottom: 35px;
+}
+
+.module-content h3 {
+  margin: 0 0 16px;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: clamp(30px, 4vw, 45px);
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -0.035em;
+}
+
+.module-content p {
+  max-width: 430px;
+
+  margin: 0;
+
+  font-family: "Source Serif 4", Georgia, serif;
+
+  font-size: 16px;
+
+  line-height: 1.55;
+}
+
+/* Footer label */
+
+.module-footer {
+  padding-top: 16px;
+
+  border-top: 1px solid currentColor;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+/* =========================================================
+   STATEMENT SECTION
+   ========================================================= */
+
+.statement-section {
+  position: relative;
+
+  min-height: 460px;
+
+  padding: 100px max(40px, calc((100vw - 1200px) / 2));
+
+  display: grid;
+  grid-template-columns: 100px 1fr;
+
+  gap: 50px;
+
+  align-items: center;
+
+  background: #000000;
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+/* Subtle inverted texture */
+
+.statement-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 3px,
+    rgba(255, 255, 255, 0.04) 3px,
+    rgba(255, 255, 255, 0.04) 4px
+  );
+}
+
+.statement-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.statement-number {
+  align-self: flex-start;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.statement-label {
+  margin: 0 0 25px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+.statement-section h2 {
+  max-width: 1000px;
+
+  margin: 0;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: clamp(44px, 6vw, 82px);
+
+  font-weight: 400;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.045em;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.landing-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 25px 40px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.12em;
+}
+
+.landing-footer div:nth-child(2) {
+  text-align: center;
+}
+
+.landing-footer div:last-child {
+  text-align: right;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .landing-header {
+    padding: 22px 24px;
+  }
+
+  .landing-header-meta {
+    display: none;
+  }
+
+  .landing-hero {
+    padding: 75px 24px 70px;
+  }
+
+  .hero-label {
+    margin-bottom: 32px;
+  }
+
+  .landing-hero h1 {
+    font-size: clamp(62px, 18vw, 105px);
+  }
+
+  .hero-bottom {
+    margin-top: 50px;
+
+    display: block;
+  }
+
+  .hero-bottom p {
+    font-size: 17px;
+  }
+
+  .hero-mark {
+    margin-top: 30px;
+  }
+
+  .modules-section {
+    padding: 75px 24px 80px;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .module-card {
+    min-height: 280px;
+  }
+
+  .statement-section {
+    min-height: auto;
+
+    padding: 75px 24px;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .statement-section h2 {
+    font-size: clamp(42px, 12vw, 70px);
+  }
+
+  .landing-footer {
+    padding: 25px 24px;
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .landing-footer div:nth-child(2),
+  .landing-footer div:last-child {
+    text-align: left;
+  }
+}
+.landing-hero h1,
+.landing-hero h1 em,
+.section-heading h2 {
+  color: #000000 !important;
+}
